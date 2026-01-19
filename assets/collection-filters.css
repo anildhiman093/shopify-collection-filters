@@ -1,0 +1,33 @@
+.collection-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.collection-filters {
+  width: 250px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .collection-layout {
+    flex-direction: column;
+  }
+
+  .collection-filters {
+    width: 100%;
+  }
+}
