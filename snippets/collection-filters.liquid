@@ -1,0 +1,21 @@
+<div class="collection-filters">
+  <form id="CollectionFiltersForm">
+    {% for filter in collection.filters %}
+      <div class="filter-group">
+        <h4>{{ filter.label }}</h4>
+
+        {% for value in filter.values %}
+          <label>
+            <input
+              type="checkbox"
+              name="{{ value.param_name }}"
+              value="{{ value.value }}"
+              {% if value.active %}checked{% endif %}
+            >
+            {{ value.label }} ({{ value.count }})
+          </label>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </form>
+</div>
