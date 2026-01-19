@@ -1,0 +1,18 @@
+{{ 'collection-filters.css' | asset_url | stylesheet_tag }}
+{{ 'collection-filters.js' | asset_url | script_tag }}
+
+<div class="collection-layout">
+  {% render 'collection-filters' %}
+
+  <div id="ProductGridContainer">
+    {% for product in collection.products %}
+      <div class="product-card">
+        <a href="{{ product.url }}">
+          {{ product.featured_image | image_url: width: 400 | image_tag }}
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
